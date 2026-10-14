@@ -1,0 +1,138 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg: #0f1117;
+    --surface: #1a1d27;
+    --surface-hover: #242836;
+    --text: #e2e8f0;
+    --text-muted: #94a3b8;
+    --accent: #60a5fa;
+    --accent-dim: #3b82f6;
+    --border: #2d3348;
+    --radius: 8px;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ===== Header ===== */
+header {
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    padding: 1.2rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+}
+
+header h1 {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--accent);
+}
+
+nav {
+    display: flex;
+    gap: 1rem;
+}
+
+nav a {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 0.95rem;
+    padding: 0.3rem 0.7rem;
+    border-radius: var(--radius);
+    transition: color 0.2s, background 0.2s;
+}
+
+nav a:hover,
+nav a.active {
+    color: var(--text);
+    background: var(--surface-hover);
+}
+
+main {
+    flex: 1;
+    max-width: 900px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 2rem 1.5rem;
+}
+
+.dictionary {
+    display: grid;
+    gap: 1rem;
+}
+
+/* ===== Term Card ===== */
+.term-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.2rem 1.5rem;
+    transition: background 0.2s, border-color 0.2s;
+}
+
+.term-card:hover {
+    background: var(--surface-hover);
+    border-color: var(--accent-dim);
+}
+
+.term-card h2 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--accent);
+    margin-bottom: 0.3rem;
+}
+
+.term-card .type {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    margin-bottom: 0.5rem;
+}
+
+.term-card p:last-child {
+    color: var(--text);
+    font-size: 0.95rem;
+}
+
+/* ===== Footer ===== */
+footer {
+    text-align: center;
+    padding: 1.2rem;
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    border-top: 1px solid var(--border);
+    background: var(--surface);
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 600px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    main {
+        padding: 1.2rem 1rem;
+    }
+
+    .term-card {
+        padding: 1rem;
+    }
+}   
